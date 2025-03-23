@@ -1,5 +1,5 @@
 """
-Command implementations for vibe-coding-init-kit CLI.
+Command implementations for vibe-coding-kit CLI.
 Provides a unified entry point for global and project commands.
 """
 

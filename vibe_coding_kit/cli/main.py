@@ -1,6 +1,6 @@
 """
-Main CLI module for vibe-coding-init-kit.
-Provides command line interface for interacting with vibe-coding-init-kit.
+Main CLI module for vibe-coding-kit.
+Provides command line interface for interacting with vibe-coding-kit.
 """
 
 import os
@@ -12,6 +12,34 @@ from typing import List
 from .commands import start_command, reset_command
 
 
+def print_welcome_badge() -> None:
+    """
+    Print a colorful welcome badge when the vibe command is run without arguments.
+    """
+    # Cyan color ANSI code is \033[36m, reset is \033[0m
+    CYAN = "\033[36m"
+    BLUE = "\033[34m"
+    GREEN = "\033[32m"
+    YELLOW = "\033[33m"
+    RESET = "\033[0m"
+    badge = f"""{CYAN}
+██╗   ██╗██╗██████╗ ███████╗                       
+██║   ██║██║██╔══██╗██╔════╝                       
+██║   ██║██║██████╔╝█████╗                         
+╚██╗ ██╔╝██║██╔══██╗██╔══╝                         
+ ╚████╔╝ ██║██████╔╝███████╗                       
+  ╚═══╝  ╚═╝╚═════╝ ╚══════╝                       
+{GREEN} ██████╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗     
+██╔════╝██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝     
+██║     ██║   ██║██║  ██║██║██╔██╗ ██║██║  ███╗    
+██║     ██║   ██║██║  ██║██║██║╚██╗██║██║   ██║    
+╚██████╗╚██████╔╝██████╔╝██║██║ ╚████║╚██████╔╝    
+ ╚═════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝     
+                                                                                   
+{RESET}"""
+    print(badge)
+
+
 def create_parser() -> argparse.ArgumentParser:
     """
     Create the argument parser for the CLI.
@@ -21,7 +49,7 @@ def create_parser() -> argparse.ArgumentParser:
     """
     parser = argparse.ArgumentParser(
         prog='vibe',
-        description='Vibe-coding-init-kit: Enhance code maintainability through Windsurf/Cursor rules'
+        description='Vibe-coding-kit: Enhance code maintainability through Windsurf/Cursor rules'
     )
     
     subparsers = parser.add_subparsers(dest='command')
@@ -61,7 +89,7 @@ def create_parser() -> argparse.ArgumentParser:
 
 def is_first_run() -> bool:
     """
-    Check if this is the first run of vibe-coding-init-kit.
+    Check if this is the first run of vibe-coding-kit.
     
     Returns:
         True if this is the first run (global rules don't exist yet), False otherwise
@@ -81,7 +109,7 @@ def main() -> None:
     """
     # Check if this is the first run and no command is specified
     if is_first_run():
-        print("Welcome to vibe-coding-init-kit!")
+        print("Welcome to vibe-coding-kit!")
         print("This appears to be your first run. We'll set up global settings first.")
         start_command(is_global=True)
         print("\nGlobal setup complete. Now you can use 'vibe start' to initialize projects.")
@@ -92,14 +120,18 @@ def main() -> None:
     args = parser.parse_args()
     
     if args.command is None:
+        # Show welcome badge before help info
+        print_welcome_badge()
         parser.print_help()
         sys.exit(0)
     
     if args.command == 'start':
+        print_welcome_badge()
         start_command(
             is_global=getattr(args, 'is_global', False)
         )
     elif args.command == 'reset':
+        print_welcome_badge()
         reset_command(
             override_global=getattr(args, 'override_global', False),
             reset_global=getattr(args, 'reset_global', False)

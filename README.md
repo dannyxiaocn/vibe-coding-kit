@@ -1,5 +1,7 @@
 # Vibe-coding-kit
 
+![Vibe Coding Kit](vibe_coding.png)
+
 > Vibe coding so chill!
 
 A toolkit for enhancing code maintainability and standardization in Vibe coding through automated configuration initialization for Windsurf/Cursor.
@@ -83,7 +85,7 @@ vibe reset --global
 
 ## Directory Structure
 
-- `vibe_coding_init_kit/`: Main package code
+- `vibe_coding_kit/`: Main package code
   - `cli/`: Command-line interface modules
     - `commands.py`: Core command implementations
     - `global_commands.py`: Global settings handling

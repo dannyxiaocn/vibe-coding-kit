@@ -1,5 +1,5 @@
 """
-Project command implementations for vibe-coding-init-kit CLI.
+Project command implementations for vibe-coding-kit CLI.
 Handles project initialization and rules file creation.
 """
 
@@ -36,7 +36,7 @@ def create_project_structure() -> None:
 
 def get_global_rules() -> Dict:
     """
-    Get global rules from global_rules.md file.
+    Get global rules from global_rules_template.md file.
     
     Returns:
         Dictionary of global rules
@@ -170,10 +170,10 @@ def create_project_rules_file_with_overrides(
 
 def project_start_command() -> None:
     """
-    Initialize a project for vibe-coding-init-kit.
+    Initialize a project for vibe-coding-kit.
     Create project structure and rules file.
     """
-    print("\nInitializing vibe-coding-init-kit for this project...")
+    print("\nInitializing vibe-coding-kit for this project...")
     
     # Get editor type
     editor_type = get_editor_type()
@@ -190,6 +190,6 @@ def project_start_command() -> None:
     
     # Check if global rules file exists
     base_dir = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
-    global_rules_path = os.path.join(base_dir, 'templates', 'global_rules.md')
+    global_rules_path = os.path.join(base_dir, 'templates', 'global_rules_template.md')
     if not os.path.exists(global_rules_path):
         print(f"\nHint: You have not set global preferences. Run 'vibe start --global' to set.")

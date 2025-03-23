@@ -7,16 +7,16 @@ def post_install():
     """
     Post-installation script to run vibe start --global
     """
-    print("\nInitializing vibe-coding-init-kit global settings...")
+    print("\nInitializing vibe-coding-kit global settings...")
     try:
         # Try to import and run directly (more reliable)
-        from vibe_coding_init_kit.cli.commands import start_command
+        from vibe_coding_kit.cli.commands import start_command
         start_command(is_global=True)
     except Exception as e:
         print(f"Direct import failed: {e}")
         try:
             # Fallback: try running the command externally
-            subprocess.run([sys.executable, "-m", "vibe_coding_init_kit.cli.main", "start", "--global"])
+            subprocess.run([sys.executable, "-m", "vibe_coding_kit.cli.main", "start", "--global"])
         except Exception as e2:
             print(f"Failed to initialize global settings: {e2}")
             print("Please run 'vibe start --global' manually to complete setup.")
@@ -45,13 +45,13 @@ else:
     cmdclass = {}
 
 setup(
-    name="vibe-coding-init-kit",
+    name="vibe-coding-kit",
     version="0.1.0",
     packages=find_packages(),
     install_requires=[],
     entry_points={
         "console_scripts": [
-            "vibe=vibe_coding_init_kit.cli.main:main",
+            "vibe=vibe_coding_kit.cli.main:main",
         ],
     },
     python_requires=">=3.6",
@@ -60,7 +60,7 @@ setup(
     description="A toolkit for enhancing code maintainability through Windsurf/Cursor rules",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/vibe-coding-init-kit",
+    url="https://github.com/yourusername/vibe-coding-kit",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

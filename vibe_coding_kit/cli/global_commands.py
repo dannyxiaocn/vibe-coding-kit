@@ -1,5 +1,5 @@
 """
-Global command implementations for vibe-coding-init-kit CLI.
+Global command implementations for vibe-coding-kit CLI.
 Handles global settings like language preferences.
 """
 
@@ -32,14 +32,14 @@ def global_start_command(
     code_comment_language: str = None
 ) -> None:
     """
-    Initialize global settings for vibe-coding-init-kit.
+    Initialize global settings for vibe-coding-kit.
     Save language preferences and other global settings to a Markdown file.
     
     Args:
         communication_language: Communication language preference
         code_comment_language: Code comment language preference
     """
-    print("\nInitializing vibe-coding-init-kit global settings...")
+    print("\nInitializing vibe-coding-kit global settings...")
     
     # Get editor type
     editor_type = get_editor_type()
