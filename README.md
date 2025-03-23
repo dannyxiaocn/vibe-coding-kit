@@ -32,6 +32,9 @@ cd vibe-coding-kit
 
 # Install the package
 pip install -e .
+
+# set up global settings
+vibe start --global
 ```
 
 ## Usage

@@ -20,7 +20,7 @@ def get_user_input(prompt: str, default: str = "") -> str:
         User input or default value
     """
     if default:
-        user_input = input(f"{prompt} [{default}]: ")
+        user_input = input(f"{prompt}: ")
         return user_input if user_input else default
     else:
         return input(f"{prompt}: ")
