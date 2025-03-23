@@ -117,6 +117,10 @@ Vibe creates and manages Markdown-based rules files that are recognized by Winds
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## DEV TODO
+- [ ] test cursor
+- [ ] add new features (check `dev/todo.md`)
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

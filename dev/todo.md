@@ -43,6 +43,8 @@
 - [x] Simplify interactive prompts
 - [ ] 优化回复
 - [x] 加一个ASCII Badge（我来）
+- [ ] 当没有 `project_description.md` 时，通过用户输入创建，而后创建对应的 `todo.md`
+- [ ] 
 
 ## DEV TODO
 - [ ] test cursor
