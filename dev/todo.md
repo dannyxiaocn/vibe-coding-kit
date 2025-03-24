@@ -30,6 +30,11 @@
   - [x] Local external library templates
   - [x] Figure out user is using windsurf or cursor(add a question), and then correspondingly write the rules to .cursorrules or .windsurfrules
   - [x] Create files: `dev/project_description.md`, `dev/todo.md`, `dev/code_docs.md`
+  - [ ] Project rules adding:
+    - [ ] self-reflection on the rules in the end of developing
+    - [ ] self-testing (Experimental) for everything developing
+      - [ ] this is risky for it will directly control the computer
+        - [ ] Add rules: 1. create venv; --> this even can make it into a local manus
 
 ## *Phase 4: CLI Development
 - [x] Design CLI command structure
@@ -43,8 +48,8 @@
 - [x] Simplify interactive prompts
 - [ ] 优化回复
 - [x] 加一个ASCII Badge（我来）
-- [ ] 当没有 `project_description.md` 时，通过用户输入创建，而后创建对应的 `todo.md`
-- [ ] 
+- [x] 当没有 `project_description.md` 时，通过用户输入创建，而后创建对应的 `todo.md`
+
 
 ## DEV TODO
 - [ ] test cursor
